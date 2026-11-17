@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Афіша заходів — ПОДІЇ UA</title>
+<meta name="description" content="Концерти, театр, мистецтво й фестивалі України в одному місці">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="site-header"><div class="wrap">
+<a class="logo" href="index.html" aria-label="ПОДІЇ UA, на головну">ПОДІЇ<span>UA</span></a>
+<button class="nav-toggle" type="button" id="navToggle" aria-expanded="false" aria-controls="siteNav" aria-label="Відкрити меню">☰</button>
+<nav class="nav" id="siteNav" aria-label="Головна навігація"><a href="index.html" aria-current="page">Події</a><a href="index.html#trend">Добірки</a><a href="organizer.html">Організаторам</a></nav>
+<div class="header-actions"><a href="cabinet.html">♡ <span class="label">Обране</span><span class="fav-count" id="favCount" hidden>0</span></a><a class="btn btn--dark" href="login.html">Кабінет</a></div>
+</div></header>
+<main>
+<section class="hero"><div class="wrap"><p class="eyebrow">Афіша твого міста</p>
+<h1>Знайди подію,<br><span class="accent">яку запам’ятаєш</span></h1><p>Концерти, театр, мистецтво й фестивалі — усе найцікавіше поруч.</p></div></section>
+<section class="wrap" aria-label="Пошук заходів"><form class="search" action="index.html" method="get" role="search">
+<label class="field">Що шукаємо?<select name="cat"><option>Усі категорії</option><option>Концерти</option><option>Театр</option><option>Виставки</option></select></label>
+<label class="field">Місто<select name="city"><option>Київ</option><option>Львів</option><option>Одеса</option></select></label>
+<label class="field">Коли<select name="date"><option>Будь-яка дата</option><option>Сьогодні</option><option>Цього тижня</option></select></label>
+<label class="field">Ціна<select name="price"><option>Будь-яка</option><option>до 500 ₴</option><option>500–1000 ₴</option></select></label>
+<button class="btn btn--primary" type="submit">Знайти події</button></form></section>
+<section class="section" id="trend"><div class="wrap"><div class="section__head"><div><p class="eyebrow eyebrow--coral">Зараз у тренді</p><h2>Не пропусти</h2></div>
+<div class="chips" id="catChips" role="group" aria-label="Фільтр за категорією"><button class="chip is-active" type="button" data-cat="all">Усі</button><button class="chip" type="button" data-cat="concert">Концерти</button><button class="chip" type="button" data-cat="theatre">Театр</button><button class="chip" type="button" data-cat="expo">Виставки</button><button class="chip" type="button" data-cat="festival">Фестивалі</button><button class="chip" type="button" data-cat="standup">Стендап</button><button class="chip" type="button" data-cat="kids">Дітям</button></div></div>
+<p class="results-count" id="resultsCount" hidden></p>
+<div class="grid-cards" id="eventsGrid"><article class="card" data-category="concert" data-event-id="onuka"><div class="card__media ph "><span class="badge badge--concert">Концерт</span><button class="fav" type="button" aria-label="Додати в обране" aria-pressed="false" data-event-id="onuka">♡</button></div>
+<div class="card__body"><p class="card__date">24 травня · 19:00</p><h3><a href="event.html">ONUKA. Великий сольний концерт</a></h3><p class="card__place">Київ · Stereo Plaza</p><p class="card__price">від 890 ₴</p></div></article>
+<article class="card" data-category="theatre" data-event-id="kaidashi"><div class="card__media ph ph--theatre"><span class="badge badge--theatre">Вистава</span><button class="fav" type="button" aria-label="Додати в обране" aria-pressed="false" data-event-id="kaidashi">♡</button></div>
+<div class="card__body"><p class="card__date">26 травня · 18:30</p><h3><a href="event.html">Театр «Дикий». Кайдаші 2.0</a></h3><p class="card__place">Львів · Театр Лесі</p><p class="card__price">від 520 ₴</p></div></article>
+<article class="card" data-category="expo" data-event-id="mria"><div class="card__media ph ph--expo"><span class="badge badge--expo">Виставка</span><button class="fav" type="button" aria-label="Додати в обране" aria-pressed="false" data-event-id="mria">♡</button></div>
+<div class="card__body"><p class="card__date">до 2 червня · 10:00–19:00</p><h3><a href="event.html">Українська мрія. Нова хвиля</a></h3><p class="card__place">Київ · Мистецький Арсенал</p><p class="card__price">250 ₴</p></div></article>
+</div></div></section>
+</main>
+<footer class="site-footer"><div class="wrap"><p>© 2026 ПОДІЇ UA — афіша культурних заходів України. Навчальний проєкт.</p></div></footer>
+<script src="js/app.js" defer></script>
+</body>
+</html>

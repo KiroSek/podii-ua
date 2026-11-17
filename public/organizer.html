@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Кабінет організатора — ПОДІЇ UA</title>
+<meta name="description" content="Керування подіями та статистика">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body><div class="admin">
+<aside class="sidebar"><a class="logo" href="index.html">ПОДІЇ<span>UA</span></a><p class="side-label">ОРГАНІЗАТОР</p><p class="mb16">Concert UA</p>
+<nav class="contents" aria-label="Кабінет організатора"><a href="organizer.html" aria-current="page">Огляд</a><a href="#events">Мої події</a><a href="#">Продажі</a><a href="#">Налаштування</a></nav><a class="back" href="index.html">← Повернутись на сайт</a></aside>
+<main class="admin__main"><div class="row row--head"><div><p class="eyebrow">Кабінет організатора</p><h1 class="h-lg m0">Ваші події</h1><p class="muted">Керуйте публікаціями та стежте за статусами.</p></div><button class="btn btn--primary" type="button" id="openCreateEvent">+ Створити подію</button></div>
+<section class="kpis" aria-label="Статистика"><div class="kpi"><p>Усього подій</p><strong id="kpiTotal">12</strong></div><div class="kpi"><p>Опубліковано</p><strong id="kpiPublished">8</strong></div><div class="kpi"><p>Продано квитків</p><strong>2 840</strong></div></section>
+<section id="events" class="table-wrap"><table><caption class="eyebrow cap">Події організатора</caption><thead><tr><th scope="col">Подія</th><th scope="col">Дата</th><th scope="col">Статус</th><th scope="col">Квитки</th><th scope="col"><span class="fs-xs">Дії</span></th></tr></thead><tbody id="eventsBody">
+<tr><td><strong>ONUKA. Великий сольний концерт</strong></td><td>24 травня 2026</td><td><span class="status status--published">Опубліковано</span></td><td>1 842</td><td class="row-actions"><button class="btn btn--secondary btn--xs" type="button" disabled>Опубліковано</button></td></tr>
+<tr><td><strong>Brave! Factory Festival 2026</strong></td><td>7–8 червня 2026</td><td><span class="status status--review">На модерації</span></td><td>—</td><td class="row-actions"><button class="btn btn--primary btn--xs" type="button" data-action="publish">Опублікувати</button><button class="btn btn--secondary btn--xs" type="button" data-action="delete">Видалити</button></td></tr>
+<tr><td><strong>Новий театральний сезон</strong></td><td>18 червня 2026</td><td><span class="status status--draft">Чернетка</span></td><td>—</td><td class="row-actions"><button class="btn btn--primary btn--xs" type="button" data-action="publish">Опублікувати</button><button class="btn btn--secondary btn--xs" type="button" data-action="delete">Видалити</button></td></tr>
+</tbody></table></section>
+<dialog class="modal" id="createEventDialog">
+<form class="panel" id="createEventForm" method="dialog" novalidate>
+<div class="modal__head"><h2 class="h-sm mt16">Нова подія</h2><button class="modal__close" type="button" id="closeCreateEvent" aria-label="Закрити">✕</button></div>
+<label class="form-field">Назва події<input type="text" name="title" id="ceTitle" placeholder="Напр. Джаз на даху" required></label>
+<label class="form-field">Дата<input type="text" name="date" id="ceDate" placeholder="Напр. 14 липня 2026" required></label>
+<label class="form-field">Категорія<select name="category" id="ceCategory" required><option value="">Оберіть категорію</option><option value="concert">Концерт</option><option value="theatre">Вистава</option><option value="expo">Виставка</option></select></label>
+<button class="btn btn--primary btn--block" type="submit">Зберегти як чернетку</button>
+</form>
+</dialog></main></div>
+<script src="js/app.js" defer></script>
+</body>
+</html>

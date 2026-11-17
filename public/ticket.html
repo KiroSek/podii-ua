@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ваш квиток — ПОДІЇ UA</title>
+<meta name="description" content="Електронний квиток із QR-кодом">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="ticket-page"><main>
+<header><p class="eyebrow">Оплату успішно здійснено</p><h1 class="h-lg">Ваш квиток готовий</h1><p id="ticketOwnerLine">Квиток збережено у вашому кабінеті.</p></header>
+<article class="ticket"><div class="ticket__top"><span class="logo">ПОДІЇ<span class="c-lime">UA</span></span><span class="ticket__tag">Електронний квиток</span></div>
+<div class="ticket__body"><div><p class="card__date" id="ticketDate">24 травня 2026 · 19:00</p><h2 id="ticketTitle">ONUKA. Великий сольний концерт</h2><p class="muted" id="ticketPlace">📍 Stereo Plaza, Київ</p></div><div class="qr" role="img" aria-label="QR-код квитка"></div>
+<dl class="span-all"><dt>Номер квитка</dt><dd id="ticketNumber">PUA-0000</dd><dt>Кількість квитків</dt><dd id="ticketQty">1</dd><dt>Промокод</dt><dd id="ticketPromo">—</dd><dt>Сума до сплати</dt><dd id="ticketTotal">0 ₴</dd></dl></div></article>
+<p><button class="btn btn--secondary btn--ghost" type="button" id="downloadPdfBtn">Завантажити PDF</button> <a class="btn btn--white" href="index.html">Знайти ще події</a></p>
+<p class="fs-xs">Покажіть QR-код на вході. Не передавайте квиток іншим особам.</p></main>
+<script src="js/app.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Оформлення замовлення — ПОДІЇ UA</title>
+<meta name="description" content="Вибір кількості квитків і оплата">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="site-header"><div class="wrap">
+<a class="logo" href="index.html" aria-label="ПОДІЇ UA, на головну">ПОДІЇ<span>UA</span></a>
+<button class="nav-toggle" type="button" id="navToggle" aria-expanded="false" aria-controls="siteNav" aria-label="Відкрити меню">☰</button>
+<nav class="nav" id="siteNav" aria-label="Головна навігація"><a href="index.html">Події</a><a href="index.html#trend">Добірки</a><a href="organizer.html">Організаторам</a></nav>
+<div class="header-actions"><a href="cabinet.html">♡ <span class="label">Обране</span><span class="fav-count" id="favCount" hidden>0</span></a><a class="btn btn--dark" href="login.html">Кабінет</a></div>
+</div></header>
+<main><div class="wrap"><section class="pt40"><p class="eyebrow">Оформлення замовлення</p><h1>Майже готово</h1><p class="muted">Перевір деталі та обери кількість квитків.</p></section>
+<form class="checkout" action="ticket.html" method="get"><div class="stack">
+<article class="panel row"><div class="ph thumb"></div><div class="grow"><span class="badge badge--concert">Концерт</span><h2 class="h-sm">ONUKA. Великий сольний концерт</h2><p class="muted m0">24 травня 2026 · 19:00<br>Stereo Plaza, Київ</p></div></article>
+<fieldset class="panel no-border" data-unit-price="890"><legend class="eyebrow">01 · Кількість квитків</legend><div class="row"><div><strong>Вхідний квиток</strong><br><span class="muted fs-s">Fan zone · Вільне розміщення</span></div><strong>890 ₴</strong>
+<div class="stepper" id="qtyStepper"><button type="button" id="qtyMinus" aria-label="Менше">−</button><input type="number" name="qty" id="qtyInput" value="2" min="1" max="10" aria-label="Кількість"><button type="button" id="qtyPlus" aria-label="Більше">+</button></div></div></fieldset>
+<fieldset class="panel no-border"><legend class="eyebrow">02 · Промокод</legend><div class="row"><label class="form-field grow m0"><span class="muted fw4">Введіть промокод</span><input type="text" name="promo" id="promoInput" autocomplete="off"></label><button class="btn btn--dark" type="button" id="promoBtn">Застосувати</button></div><p class="form-msg" id="promoMsg" hidden></p></fieldset></div>
+<aside class="panel"><p class="eyebrow">Ваше замовлення</p><h2>Разом до сплати</h2><div class="row muted"><span id="summaryQtyLabel">Квитки × 2</span><span id="summarySubtotal">1 780 ₴</span></div><div class="row muted" id="discountRow" hidden><span>Знижка</span><span id="summaryDiscount">−0 ₴</span></div><div class="row muted"><span>Сервісний збір</span><span>0 ₴</span></div><hr class="hr"><div class="row"><span>Разом</span><span class="total" id="summaryTotal">1 780 ₴</span></div>
+<button class="btn btn--primary btn--block" type="submit">Перейти до оплати →</button><p class="muted note">Оплачуючи, ви приймаєте умови публічної оферти.</p></aside></form></div></main>
+<footer class="site-footer"><div class="wrap"><p>© 2026 ПОДІЇ UA — афіша культурних заходів України. Навчальний проєкт.</p></div></footer>
+<script src="js/app.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+node_modules/
+podii.db
+podii.db-shm
+podii.db-wal
+.env
+test/shots/
+*.log

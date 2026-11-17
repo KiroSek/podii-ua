@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Особистий кабінет — ПОДІЇ UA</title>
+<meta name="description" content="Обране та квитки користувача">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="site-header"><div class="wrap">
+<a class="logo" href="index.html" aria-label="ПОДІЇ UA, на головну">ПОДІЇ<span>UA</span></a>
+<button class="nav-toggle" type="button" id="navToggle" aria-expanded="false" aria-controls="siteNav" aria-label="Відкрити меню">☰</button>
+<nav class="nav" id="siteNav" aria-label="Головна навігація"><a href="index.html">Події</a><a href="index.html#trend">Добірки</a><a href="organizer.html">Організаторам</a></nav>
+<div class="header-actions"><a href="cabinet.html">♡ <span class="label">Обране</span><span class="fav-count" id="favCount" hidden>0</span></a><a class="btn btn--dark" href="login.html">Кабінет</a></div>
+</div></header>
+<main><div class="wrap">
+<section class="profile"><div class="avatar" aria-hidden="true" id="avatarInitials">—</div><div><p class="eyebrow m0">Особистий кабінет</p><h1 class="h-md" id="profileName">Завантаження…</h1><p class="muted m0" id="profileEmail"></p></div><button class="btn btn--secondary ml-auto" type="button" id="logoutBtn">Вийти</button></section>
+<div class="tabs tabs--narrow" role="tablist" id="cabinetTabs"><a href="#fav" role="tab" aria-selected="true" data-tab="fav">♡ Обране (<span id="favTabCount">0</span>)</a><a href="#tickets" role="tab" aria-selected="false" data-tab="tickets">Мої квитки</a></div>
+<section class="section" id="fav" data-panel="fav"><p class="eyebrow eyebrow--coral">Збережені події</p><h2>Плани на майбутнє</h2><p class="empty-state" id="favEmpty" hidden>Поки немає обраних подій. Познач ♡ на картці заходу, щоб вона з’явилася тут.</p>
+<div class="grid-cards" id="favGrid"></div></section>
+<section class="section panel-hidden" id="tickets" data-panel="tickets">
+<p class="eyebrow eyebrow--coral">Придбані квитки</p><h2>Мої квитки</h2>
+<div id="ticketsList"></div>
+</section></div></main>
+<footer class="site-footer"><div class="wrap"><p>© 2026 ПОДІЇ UA — афіша культурних заходів України. Навчальний проєкт.</p></div></footer>
+<script src="js/app.js" defer></script>
+</body>
+</html>

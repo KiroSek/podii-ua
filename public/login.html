@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Вхід і реєстрація — ПОДІЇ UA</title>
+<meta name="description" content="Увійдіть або зареєструйтесь у ПОДІЇ UA">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="auth"><aside class="auth__art"><p class="eyebrow c-lime">Твоя культурна мапа</p><h1>Події, що стають <em>спогадами</em></h1><p>Зберігай улюблене, купуй квитки та завжди май їх під рукою.</p></aside>
+<main class="auth__form"><a class="logo" href="index.html">ПОДІЇ<span>UA</span></a><h2 class="mt48">Раді бачити знову</h2><p class="muted">Увійди, щоб продовжити свою культурну подорож.</p>
+<div class="tabs" role="tablist" id="authTabs"><a href="#in" role="tab" aria-selected="true" data-tab="in">Вхід</a><a href="#reg" role="tab" aria-selected="false" data-tab="reg">Реєстрація</a></div>
+<form action="cabinet.html" method="get" id="loginForm" data-panel="in" novalidate><label class="form-field">Email<input type="email" name="email" id="loginEmail" placeholder="name@example.com" required></label>
+<label class="form-field">Пароль<input type="password" name="password" id="loginPassword" autocomplete="current-password" placeholder="Мінімум 8 символів" minlength="8" required></label>
+<button class="btn btn--primary btn--block" type="submit">Увійти →</button></form>
+<form action="cabinet.html" method="get" id="regForm" class="panel-hidden" data-panel="reg" novalidate><label class="form-field">Ім'я<input type="text" name="name" id="regName" placeholder="Марія Коваль" required></label>
+<label class="form-field">Email<input type="email" name="email" id="regEmail" placeholder="name@example.com" required></label>
+<label class="form-field">Пароль<input type="password" name="password" id="regPassword" autocomplete="new-password" placeholder="Мінімум 8 символів" minlength="8" required></label>
+<label class="form-field">Повторіть пароль<input type="password" name="password2" id="regPassword2" autocomplete="new-password" placeholder="Повторіть пароль" required></label>
+<label class="form-field form-field--check"><input type="checkbox" id="regIsOrganizer" name="isOrganizer"> Реєструюся як організатор заходів</label>
+<button class="btn btn--primary btn--block" type="submit">Зареєструватися →</button></form>
+<p class="divider">або продовжити через</p><div class="socials"><a class="btn btn--secondary" href="cabinet.html">G Google</a><a class="btn btn--secondary" href="cabinet.html">Apple ID</a></div>
+<p class="muted legal">Продовжуючи, ви погоджуєтесь з умовами користування та політикою конфіденційності.</p></main></div>
+<script src="js/app.js" defer></script>
+</body>
+</html>
