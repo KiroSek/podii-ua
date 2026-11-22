@@ -6,7 +6,11 @@ const Database = require("better-sqlite3");
 const DB_PATH = path.join(__dirname, "..", "podii.db");
 const db = new Database(DB_PATH);
 
-db.pragma("journal_mode = WAL");
+// WAL-режим використовує mmap() для спільної пам'яті (-wal/-shm файли), що
+// викликає Segmentation fault у деяких обмежених контейнерних середовищах
+// (напр. безкоштовний план Render). Для цього невеликого однопроцесного
+// застосунку достатньо стандартного журналу транзакцій.
+db.pragma("journal_mode = DELETE");
 db.pragma("foreign_keys = ON");
 
 db.exec(`
