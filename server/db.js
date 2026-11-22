@@ -1,17 +1,24 @@
 // Ініціалізація SQLite-бази та опис схеми таблиць.
 // Файл бази зберігається поруч (podii.db) і створюється автоматично при першому запуску.
+//
+// Використовуємо вбудований у Node.js модуль node:sqlite (а не пакет
+// better-sqlite3), бо нативний бінарник better-sqlite3 викликав
+// Segmentation fault на хості Render — навіть після перекомпіляції з
+// джерел під той самий Node.js/контейнер. node:sqlite входить до складу
+// самого Node.js (з версії 22.5, без будь-яких нативних npm-залежностей),
+// тож цей клас проблем несумісності бінарників зникає повністю.
+// API практично ідентичний better-sqlite3 (prepare/run/get/all).
 const path = require("path");
-const Database = require("better-sqlite3");
+const { DatabaseSync } = require("node:sqlite");
 
 const DB_PATH = path.join(__dirname, "..", "podii.db");
-const db = new Database(DB_PATH);
+const db = new DatabaseSync(DB_PATH);
 
-// WAL-режим використовує mmap() для спільної пам'яті (-wal/-shm файли), що
-// викликає Segmentation fault у деяких обмежених контейнерних середовищах
-// (напр. безкоштовний план Render). Для цього невеликого однопроцесного
-// застосунку достатньо стандартного журналу транзакцій.
-db.pragma("journal_mode = DELETE");
-db.pragma("foreign_keys = ON");
+// Класичний (не WAL) журнал транзакцій — WAL використовує mmap() для
+// спільної пам'яті (-wal/-shm файли), що також може конфліктувати з
+// обмеженими контейнерними середовищами.
+db.exec("PRAGMA journal_mode = DELETE");
+db.exec("PRAGMA foreign_keys = ON");
 
 db.exec(`
 CREATE TABLE IF NOT EXISTS users (
@@ -75,8 +82,14 @@ if (eventsCount === 0) {
     { slug: "kaidashi", title: "Театр «Дикий». Кайдаші 2.0", category: "theatre", date_label: "26 травня · 18:30", city: "Львів", place: "Театр Лесі", price: 520, status: "published", organizer_id: organizerId },
     { slug: "mria", title: "Українська мрія. Нова хвиля", category: "expo", date_label: "до 2 червня · 10:00–19:00", city: "Київ", place: "Мистецький Арсенал", price: 250, status: "published", organizer_id: organizerId }
   ];
-  const insertMany = db.transaction((rows) => rows.forEach((r) => insertEvent.run(r)));
-  insertMany(seed);
+  db.exec("BEGIN");
+  try {
+    seed.forEach((r) => insertEvent.run(r));
+    db.exec("COMMIT");
+  } catch (e) {
+    db.exec("ROLLBACK");
+    throw e;
+  }
   console.log("[db] Базу заповнено початковими даними (3 заходи, 1 організатор).");
 }
 
